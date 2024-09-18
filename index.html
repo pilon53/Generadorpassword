@@ -1,37 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <title>Generador de contraseñas</title>
-    <link rel="stylesheet" href="./assets/style.css">
+    <title>Generador de Contraseñas</title>
+    <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-     
-    <main class="container">
-        <div class="container__contenido">
-            <div class="container__informacion">
-                <div class="container__texto">
-                    <h1>Generador<span class="container__texto-azul"> de Contraseñas</span></h1>
-                    <div class="container__campo"> 
-                        <label class="texto__parrafo">Cantidad
-                            <input class="container__input" type="number" id="cantidad" >
-                        </label>
-                        <button class="boton" id="generar" onclick="generar()" >Generar</button>
-                    </div> 
-                    <div class="container__campo">
-                        <input class="container__contrasena" type="text" id="contrasena" placeholder="contraseña">
-                    </div>
-                </div> 
-            </div>
+    <div class="container">
+        <h1>Generador de Contraseñas</h1>
+        <div class="form-group">
+            <label for="length">Longitud de la Contraseña:</label>
+            <input type="number" id="length" min="4" max="50" value="12">
         </div>
- 
-    </main>
-    
-    <script src="main.js"></script> 
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="uppercase" checked> Incluir Mayúsculas
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="lowercase" checked> Incluir Minúsculas
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="numbers" checked> Incluir Números
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="checkbox" id="symbols" checked> Incluir Símbolos
+            </label>
+        </div>
+        <div class="form-group">
+            <button id="generate">Generar Contraseña</button>
+            <button id="clear">Limpiar</button>
+        </div>
+        <div class="form-group">
+            <input type="text" id="password" readonly>
+            <button id="copy">Copiar</button>
+        </div>
+        <div class="strength-meter">
+            <div class="strength-meter-fill"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
